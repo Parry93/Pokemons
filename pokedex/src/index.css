@@ -18,22 +18,36 @@ body {
     flex-direction: column;
     width: 70vh;
     height: 90vh;
-    gap: 5.2vh;
+    gap: 3.6vh;
     align-items: center;
-    
     background-color: hwb(1 30% 13% / 0.875);
     border-radius: 5vh;
     border: 1px solid black;
-    z-index: 1;
-    
+    z-index: 1;  
+}
+.dex{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 70vh;
+    height: 90vh;
+    gap: 3.6vh;
+    align-items: center;
+    background-color: hwb(1 30% 13% / 0.875);
+    border-radius: 5vh;
+   
+    z-index: -10;  
 }
 .TopLeft{
   width: 90%;
   height: 15%;
   display: flex;
-  gap: 2vh;
+  gap: 1vh;
   padding-top: 2vh;
-  
+}
+.openPoke{
+    width: 10%;
+    height: 5%;
 }
 .circleA{
   width: 15%;
@@ -295,4 +309,5 @@ label {
     border: 3px solid;
     border-radius: 10px;
     background-color: rgb(102, 102, 102);
+    
 }

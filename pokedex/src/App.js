@@ -7,7 +7,9 @@ export default function PokeAPI() {
   const [Img, setImg] = useState("");
   const [Type, setType] = useState("");
   const [Moves, setMoves] = useState("");
-  const [Abilities, setAbilities] = useState("")
+  const [Abilities, setAbilities] = useState("");
+  const [Slide, setSlide]= useState(false);
+
 
   useEffect(() => {
     async function getData() {
@@ -18,9 +20,10 @@ export default function PokeAPI() {
         setType(res.data.types[0].type.name);
         setMoves(res.data.moves.map((e) => e.move.name));
         setAbilities(res.data.abilities.map((e) => e.ability.name ));
+       
       } catch (error) {
         alert("PAVVINèèèèèè");
-        // Gestisci l'errore qui
+        
       }
     }
   
@@ -38,6 +41,9 @@ export default function PokeAPI() {
     if (name !== "") setFind(name);
     setname("");
   };
+  const handleSLide = () => {
+    setSlide(!Slide);
+   }
 
   return (
     <>
@@ -93,14 +99,10 @@ export default function PokeAPI() {
           <nav>
           <div className="type">{Type}</div>
           </nav>
-
-
-
-
-
-
+          <button className="openPoke"onClick={handleSLide} >Open</button>
+          
         </div>
-        <div className="card2">
+        <div className={Slide ? "card2" : "dex"}>
           <div className="top">
             <div className="name">{Find.toUpperCase()}</div>
             
