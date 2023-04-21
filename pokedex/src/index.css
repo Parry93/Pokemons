@@ -109,22 +109,34 @@ background-color: black;
 
 }
 .name {
-    height: 3%;
+    height: 40%;
+    font-size: 3vh;
     width: 100%;
     text-align: center;
-    font-weight: bolder;
-    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: hwb(63 21% 0% / 0.87);
     
 }
 
 .type {
-    height: 80%;
+    height: 30%;
     width: 100%;
     text-align: center;
     font-weight: bolder;
-    color: white;
-    font-size: 3vh;
+    color: black;
+    font-size: 2.4vh;
 }
+.type1 {
+    height: 30%;
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
+    color: black;
+    font-size: 1.4vh;
+    gap: 2px;
+}
+
 
 .header {
     display: flex;
@@ -177,10 +189,14 @@ nav>a:hover {
 }
 
 .top {
+    display: flex;
+    flex-direction: column;
     width: 70%;
     height: 20%;
     border: 1px solid;
     margin-top: 35px;
+    justify-content: space-between;
+    
 }
 
 .medium {

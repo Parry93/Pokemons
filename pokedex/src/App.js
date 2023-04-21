@@ -6,17 +6,29 @@ export default function PokeAPI() {
   const [Find, setFind] = useState("pikachu");
   const [Img, setImg] = useState("");
   const [Type, setType] = useState("");
+  const [Moves, setMoves] = useState("");
+  const [Abilities, setAbilities] = useState("")
 
   useEffect(() => {
     async function getData() {
-      let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${Find}`);
-      console.log(res);
-      setImg(res.data.sprites.other.home.front_default);
-      setType(res.data.types[0].type.name);
+      try {
+        let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${Find}`);
+        console.log(res);
+        setImg(res.data.sprites.other.home.front_default);
+        setType(res.data.types[0].type.name);
+        setMoves(res.data.moves.map((e) => e.move.name));
+        setAbilities(res.data.abilities.map((e) => e.ability.name ));
+      } catch (error) {
+        alert("ooooo");
+        // Gestisci l'errore qui
+      }
     }
-
+  
     getData();
   }, [Find]);
+  console.log(Moves)
+  console.log(Abilities)
+
 
   const Typename = (event) => {
     setname(event.target.value);
@@ -29,29 +41,29 @@ export default function PokeAPI() {
 
   return (
     <>
-    <div className="header">
-    <h1>Pokedex</h1>
-    <nav>
-    <div id="menuToggle">
-                    <input type="checkbox" />
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <ul id="menu">
-                        <a href="#">
-                            <li>Home</li>
-                        </a>
-                        <a href="#">
-                            <li>Lista</li>
-                        </a>
+      <div className="header">
+        <h1>Pokedex</h1>
+        <nav>
+          <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+              <a href="#">
+                <li>Home</li>
+              </a>
+              <a href="#">
+                <li>Lista</li>
+              </a>
 
-                    </ul>
-                </div>
-        <a href="#">Home</a>
-        <a href="#">Lista</a>
-      </nav>
+            </ul>
+          </div>
+          <a href="#">Home</a>
+          <a href="#">Lista</a>
+        </nav>
 
-    
+
       </div>
       <div className="back">
         <div className="card">
@@ -69,34 +81,36 @@ export default function PokeAPI() {
             </div>
             <img src={`${Img}`} alt="" />
             <div className="redContainer">
-            <div className="redBtn"></div>
-            <div className="hamburger">
-              <div className="ham1"></div>
-              <div className="ham1"></div>
-              <div className="ham1"></div>
-            </div>
+              <div className="redBtn"></div>
+              <div className="hamburger">
+                <div className="ham1"></div>
+                <div className="ham1"></div>
+                <div className="ham1"></div>
+              </div>
             </div>
           </div>
-          
+
           <nav>
-            <div className="type">{Type}</div>
+
           </nav>
-         
 
 
-          
 
-          
+
+
+
         </div>
         <div className="card2">
           <div className="top">
-          <div className="name">{Find.toUpperCase()}</div>
+            <div className="name">{Find.toUpperCase()}</div>
+            <div className="type">{Type}</div>
+            <div className="type1">{Abilities}</div>
           </div>
           <div className="medium">
             <label For="">Cerca il tuo pokemon</label>
             <div className="input">
 
-            <input type="text" className="testo" onChange={Typename} value={name} />
+              <input type="text" className="testo" onChange={Typename} value={name} />
 
             </div>
             <div className="fake">
