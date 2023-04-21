@@ -124,7 +124,7 @@ background-color: black;
     width: 100%;
     text-align: center;
     font-weight: bolder;
-    color: black;
+    color: hwb(63 21% 0% / 0.87);
     font-size: 2.4vh;
 }
 .type1 {

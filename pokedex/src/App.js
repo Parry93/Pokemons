@@ -19,7 +19,7 @@ export default function PokeAPI() {
         setMoves(res.data.moves.map((e) => e.move.name));
         setAbilities(res.data.abilities.map((e) => e.ability.name ));
       } catch (error) {
-        alert("ooooo");
+        alert("PAVVINèèèèèè");
         // Gestisci l'errore qui
       }
     }
@@ -91,7 +91,7 @@ export default function PokeAPI() {
           </div>
 
           <nav>
-
+          <div className="type">{Type}</div>
           </nav>
 
 
@@ -103,7 +103,7 @@ export default function PokeAPI() {
         <div className="card2">
           <div className="top">
             <div className="name">{Find.toUpperCase()}</div>
-            <div className="type">{Type}</div>
+            
             <div className="type1">{Abilities}</div>
           </div>
           <div className="medium">
