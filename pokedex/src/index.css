@@ -35,7 +35,6 @@ body {
     align-items: center;
     background-color: hwb(1 30% 13% / 0.875);
     border-radius: 5vh;
-   
     z-index: -10;  
 }
 .TopLeft{
