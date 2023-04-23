@@ -103,7 +103,7 @@ export default function PokeAPI() {
           <button className="openPoke"onClick={handleSLide} >Open</button>
           
         </div>
-        <div className= {Slide ? "card2 active" : "dex"}>
+        <div className= {Slide ? "card2" : "dex"}>
           <div className="top">
             <div className="name">{Find.toUpperCase()}</div>
             
