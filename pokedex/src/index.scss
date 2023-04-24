@@ -35,14 +35,11 @@ body {
     width: 30%;
     height: 80vh;
     gap: 7vh;
-    border: 1px solid rgb(0, 0, 0);
-    background-color: hwb(1 30% 13% / 0.875);
+    background-color: hwb(1 22% 4% / 0.875);
     border-radius: 5vh;
-    border: 1px solid black;
     transition: transform 1s ease-in-out;
     transform: translateX(-100%);
     z-index: -10;
-  
 }
 
 .TopLeft {
@@ -228,7 +225,7 @@ nav>a:hover {
     flex-direction: column;
     width: 70%;
     height: 20%;
-    background-color: hwb(212 51% 5% / 0.875);
+    background-color: hwb(212 51% 5%/0.875);
     border-radius: 5vh;
     margin-top: 35px;
     justify-content: space-around;
@@ -331,3 +328,7 @@ label {
     border-radius: 10px;
     background-color: rgb(102, 102, 102);
 }
+.logo{
+    width:39%;
+    border-radius: 3vh;
+} 

@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./index.css"
+import logo from './logo.jpg';
+import poke from './poke.png';
+import home from './home.png';
+import menu from './menu.png';
+
 export default function PokeAPI() {
   const [name, setname] = useState("");
   const [Find, setFind] = useState("pikachu");
   const [Img, setImg] = useState("");
+  const [ImgIcon, setImgIcon] = useState("");
   const [Type, setType] = useState("");
   const [Moves, setMoves] = useState("");
   const [Abilities, setAbilities] = useState("");
@@ -15,8 +21,10 @@ export default function PokeAPI() {
     async function getData() {
       try {
         let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${Find}`);
-        console.log(res);
-        setImg(res.data.sprites.other.home.front_default);
+        console.log(res.data);
+        setImg(res.data.sprites.other.dream_world.front_default);
+        setImgIcon(res.data.sprites.front_default);
+        
         setType(res.data.types[0].type.name);
         setMoves(res.data.moves.map((e) => e.move.name));
         setAbilities(res.data.abilities.map((e) => e.ability.name ));
@@ -29,8 +37,8 @@ export default function PokeAPI() {
   
     getData();
   }, [Find]);
-  console.log(Moves)
-  console.log(Abilities)
+ 
+ 
 
 
   const Typename = (event) => {
@@ -45,29 +53,14 @@ export default function PokeAPI() {
     setSlide(!Slide);
    }
 
-
   return (
     <>
       <div className="header">
-        <h1>Pokedex</h1>
+      <img src={poke} alt="" />
         <nav>
-          <div id="menuToggle">
-            <input type="checkbox" />
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul id="menu">
-              <a href="#">
-                <li>Home</li>
-              </a>
-              <a href="#">
-                <li>Lista</li>
-              </a>
-
-            </ul>
-          </div>
-          <a href="#">Home</a>
-          <a href="#">Lista</a>
+          <a href="#"> <img src={home} alt="" /></a>
+          <a href="#"><img className="logo" src={logo}></img></a>
+          <a href="#"> <img src={menu} alt="" /></a>
         </nav>
 
 
@@ -98,6 +91,7 @@ export default function PokeAPI() {
           </div>
 
           <nav>
+            
           <div className="type">{Type}</div>
           </nav>
           <button className="openPoke"onClick={handleSLide} >Open</button>
@@ -106,6 +100,7 @@ export default function PokeAPI() {
         <div className= {Slide ? "card2" : "dex"}>
           <div className="top">
             <div className="name">{Find.toUpperCase()}</div>
+            <div><img src={ImgIcon}/></div>
             
             <div className="type1">{Abilities}</div>
           </div>
@@ -130,7 +125,9 @@ export default function PokeAPI() {
               <button className="enter" onClick={Search}>Cerca</button>
             </div>
             <div className="second-bottom">
-              <div className="btn-useless2"></div>
+              <button className="btn-useless2" >
+
+              </button>
               <div className="btn-useless3"></div>
             </div>
           </div>
