@@ -181,6 +181,8 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    gap:3vh;
+    margin-top: 3vh;
 }
 
 nav {
@@ -219,7 +221,7 @@ nav>a:hover {
     width: 30%;
     height: 80vh;
     gap: 7vh;
-    background-color: hwb(1 30% 13% / 0.875);
+    background-color: hwb(0 24% 73% / 0.875);
     border-radius: 5vh;
     transition: transform 1s ease-in-out;
     transform: translateX(0%);
