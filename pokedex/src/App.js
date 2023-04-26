@@ -5,6 +5,8 @@ import logo from './logo.jpg';
 import poke from './poke.png';
 import home from './home.png';
 import menu from './menu.png';
+import ButtonMailto from "./BtnMail";
+import { Link } from "react-router-dom";
 
 export default function PokeAPI() {
   const [name, setname] = useState("");
@@ -14,7 +16,8 @@ export default function PokeAPI() {
   const [Type, setType] = useState("");
   const [Moves, setMoves] = useState("");
   const [Abilities, setAbilities] = useState("");
-  const [Slide, setSlide]= useState(false);
+  const [Slide, setSlide]= useState(true);
+  
 
 
   useEffect(() => {
@@ -52,6 +55,8 @@ export default function PokeAPI() {
   const handleSLide = () => {
     setSlide(!Slide);
    }
+
+ 
 
   return (
     <>
@@ -97,10 +102,10 @@ export default function PokeAPI() {
           <button className="openPoke"onClick={handleSLide} >Open</button>
           
         </div>
-        <div className= {Slide ? "card2" : "dex"}>
+        <div className= {`card2 ${Slide ? "slide-active" : ""}`}>
           <div className="top">
             <div className="name">{Find.toUpperCase()}</div>
-            <div><img src={ImgIcon}/></div>
+            <div className="icon-"><img src={ImgIcon}/></div>
             
             <div className="type1">{Abilities}</div>
           </div>
@@ -122,7 +127,7 @@ export default function PokeAPI() {
                 <div className="btn-useless"></div>
                 <div className="btn-useless"></div>
               </div>
-              <button className="enter" onClick={Search}>Cerca</button>
+              <button className="enter" onClick={Search}><p>Cerca</p> </button>
             </div>
             <div className="second-bottom">
               <button className="btn-useless2" >
@@ -135,8 +140,30 @@ export default function PokeAPI() {
 
       </div>
       <footer>
-        <p></p>
-      </footer>
+          <p>Contatti:</p>
+            <section class="info">
+                <div className="contatti-Giovy">
+                <h3>Giovanni Composto</h3>
+                    <p>Jr Front-end developer</p>
+                    <div className="link-utili">
+                    <ButtonMailto label="Scrivimi una mail" mailto="mailto:givyc93@gmail.com" />  
+                    <Link to="https://github.com/giovyc93">Github</Link>     
+                    <Link to="https://www.linkedin.com/in/giovanni-composto-218554195/">Linkedin</Link>     
+                    </div>
+                </div>
+                <div className="contatti-Manu">
+                    <h3>Emanuele Parrinello</h3>
+                    <p>Jr Front-end developer</p>
+                    <div className="link-utili">
+                    <ButtonMailto label="Scrivimi una mail" mailto="mailto:parrinelloemanuele@gmail.com" />  
+                    <Link to="https://github.com/Parry93">Github</Link>     
+                    <Link to="https://www.linkedin.com/in/emanuele-parrinello-22475b232/">Linkedin</Link>     
+                    </div>
+                    </div>
+            </section>
+            
+        
+    </footer>
     </>
   );
 }
