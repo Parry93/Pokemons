@@ -146,9 +146,9 @@ export default function PokeAPI() {
                 <h3>Giovanni Composto</h3>
                     <p>Jr Front-end developer</p>
                     <div className="link-utili">
-                    <ButtonMailto label="Scrivimi una mail" mailto="mailto:parrinelloemanuele@gmail.com" />  
-                    <Link to="https://github.com/Parry93">Github</Link>     
-                    <Link to="https://www.linkedin.com/in/emanuele-parrinello-22475b232/">Linkedin</Link>     
+                    <ButtonMailto label="Scrivimi una mail" mailto="mailto:givyc93@gmail.com" />  
+                    <Link to="https://github.com/giovyc93">Github</Link>     
+                    <Link to="https://www.linkedin.com/in/giovanni-composto-218554195/">Linkedin</Link>     
                     </div>
                 </div>
                 <div className="contatti-Manu">

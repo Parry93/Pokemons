@@ -280,8 +280,8 @@ label {
 }
 
 .enter {
-    height: 60%;
-    width: 25%;
+    height: 80%;
+    width: 10%;
     border-radius: 80%;
     background-color: yellow;
     display: flex;
